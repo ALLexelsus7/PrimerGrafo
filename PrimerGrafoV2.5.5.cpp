@@ -1,8 +1,5 @@
-//pasos
-    //1. separar caracteres
-    //2. comparar cada caracter
-    //3. inicar la condicion
-
+//ACT 1
+//Alex Ruiz Jordan 24110097
 #include <iostream>
 #include <string>
 
@@ -10,11 +7,10 @@ using namespace std;
 
 int main()
 {
-    cout << "Grafo con la palabra definida" << endl;
+    cout << "Grafo con la palabra predefinida" << endl;
 
-    string palabra = "0000011111";
+    string palabra = "11010";
     int estado = 0;
-    int operacion = 0;
     bool palabraCorrecta = false;
     
     for(size_t i = 0; i < palabra.length(); i++){ //Itera segun el tamanio de la palabra (size_t o auto para que detecte solo)
@@ -27,7 +23,6 @@ int main()
                     //si no, es 1 y pasa a q2
                     estado = 2;
                 }
-                operacion = 1;
             break;
 
             case 1: //estado q1
@@ -41,7 +36,6 @@ int main()
                     cout << "Palabra Incorrecta!: " + palabra;
                     return 0;
                 }
-                operacion = 2;
             break;
             case 2: //estado q2
                 //el valor anterior fue 1, ahora debe ser 0
@@ -54,12 +48,10 @@ int main()
                     cout << "Palabra Incorrecta!: " + palabra;
                     return 0;
                 }
-                operacion = 2;
             break;
 
             case 3: //estado q3
                 // el valor anterior fue 0 o 1, ahora puede ser 0 o 1 o terminar la palabra
-                operacion++;
                 palabraCorrecta = true;
             break;
         }
